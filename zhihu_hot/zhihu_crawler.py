@@ -3,6 +3,7 @@ import json
 from bs4 import BeautifulSoup as BS
 import re
 import time
+import urllib.request
 
 url = "https://www.zhihu.com/hot"
 
@@ -17,8 +18,16 @@ def get_section():
     with open("headers.json", "r") as f:
         dict = json.load(f)
     headers = {"User-Agent": dict["User-Agent"], "Cookie": dict["Cookie"]}
-    response = requests.get("https://www.zhihu.com/hot", headers = headers)
-    soup = BS(response.text, 'lxml')
+
+    # 使用requests模块
+    # response = requests.get("https://www.zhihu.com/hot", headers = headers).text
+
+    # 使用 urllib模块
+    request = urllib.request.Request(url = url, headers = headers)
+    response = urllib.request.urlopen(request)
+    response = response.read().decode("utf-8")
+
+    soup = BS(response, 'lxml')
     return soup.find_all("section", class_="HotItem")
 
 def crawler(num: int):
@@ -27,7 +36,7 @@ def crawler(num: int):
     
     result_list = []
     for i in range(50):
-        tmp_dict = {}
+        tmp_dict = {"index": str(i + 1)}
         # keys = ["title", "url", "excerpt", "heat", "answer", "attention", "browse"]
 
         # 获得标题
@@ -54,21 +63,33 @@ def crawler(num: int):
         
         # 进入该问题的内容网址
         time.sleep(interval_questions)
-        tmp_response = requests.get(tmp_url, headers = headers)
-        tmp_soup = BS(tmp_response.text, 'lxml')
+
+        # 使用requests模块
+        # tmp_response = requests.get(tmp_url, headers = headers).text
+
+        # 使用 urllib模块
+        tmp_request = urllib.request.Request(url = tmp_url, headers = headers)
+        tmp_response = urllib.request.urlopen(tmp_request)
+        tmp_response = tmp_response.read().decode("utf-8")
+
+        tmp_soup = BS(tmp_response, 'lxml')
 
         # 获得热度
-        regex = '<span>(.+)<!-- --> 个回答</span>'
-        pattern = re.compile(regex)
-        tmp_dict["answer"] = re.findall(pattern, str(tmp_soup))[0]
+        try:
+            regex = '<span>(.+)<!-- --> 个回答</span>'
+            pattern = re.compile(regex)
+            tmp_dict["answer"] = re.findall(pattern, str(tmp_soup))[0]
+        except Exception as e:
+            print("get answer error", e)
+            tmp_dict["excerpt"] = "It's advertisement"
+        else:
+            # 获得关注和浏览数
+            strong_value = tmp_soup.find_all("strong", class_ = "NumberBoard-itemValue")
+            tmp_dict["attention"] = strong_value[0]["title"]
+            tmp_dict["browse"] = strong_value[1]["title"]
 
-        # 获得关注和浏览数
-        strong_value = tmp_soup.find_all("strong", class_ = "NumberBoard-itemValue")
-        tmp_dict["attention"] = strong_value[0]["title"]
-        tmp_dict["browse"] = strong_value[1]["title"]
-        
         result_list.append(tmp_dict)
-        print("Num: ", num, "Index: ", i + 1, " ", tmp_dict)
+        print("Num: ", num, " ", tmp_dict)
         print()
 
     return result_list
@@ -83,8 +104,8 @@ def main():
         start_time = cur_time()
         result_list = crawler(i + 1)
         end_time = cur_time()
-        run_time = {"start_time": start_time, "end_time": end_time}
-        print("Num: ", i + 1, run_time)
+        run_time = {"Num": str(i + 1), "start_time": start_time, "end_time": end_time}
+        print(run_time)
         print()
         result_list.insert(0, run_time)
         all_result.append(result_list)
