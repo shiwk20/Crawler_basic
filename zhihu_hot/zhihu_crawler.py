@@ -20,7 +20,7 @@ def get_section():
     headers = {"User-Agent": dict["User-Agent"], "Cookie": dict["Cookie"]}
 
     # 使用requests模块
-    # response = requests.get("https://www.zhihu.com/hot", headers = headers).text
+    # response = requests.get(url, headers = headers).text
 
     # 使用 urllib模块
     request = urllib.request.Request(url = url, headers = headers)
