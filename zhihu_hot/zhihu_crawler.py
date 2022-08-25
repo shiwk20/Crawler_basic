@@ -4,12 +4,13 @@ from bs4 import BeautifulSoup as BS
 import re
 import time
 import urllib.request
+from tqdm import tqdm
 
 url = "https://www.zhihu.com/hot"
 
 interval_questions = 2
 interval_crawler = 60
-max_num = 2
+max_num = 1
 
 hearders = {}
 
@@ -30,12 +31,12 @@ def get_section():
     soup = BS(response, 'lxml')
     return soup.find_all("section", class_="HotItem")
 
-def crawler(num: int):
+def crawler():
     section = get_section()
     assert len(section) == 50
     
     result_list = []
-    for i in range(50):
+    for i in tqdm(range(50)):
         tmp_dict = {"index": str(i + 1)}
         # keys = ["title", "url", "excerpt", "heat", "answer", "attention", "browse"]
 
@@ -89,8 +90,8 @@ def crawler(num: int):
             tmp_dict["browse"] = strong_value[1]["title"]
 
         result_list.append(tmp_dict)
-        print("Num: ", num, " ", tmp_dict)
-        print()
+        # print("Num: ", num, " ", tmp_dict)
+        # print()
 
     return result_list
 
@@ -100,19 +101,20 @@ def cur_time():
 
 def main():
     all_result = []
+    print(f"interval_questions: {interval_questions}, interval_crawler: {interval_crawler}, max_num: {max_num}")
     for i in range(max_num):
         start_time = cur_time()
-        result_list = crawler(i + 1)
         end_time = cur_time()
         run_time = {"Num": str(i + 1), "start_time": start_time, "end_time": end_time}
         print(run_time)
-        print()
+        
+        result_list = crawler()
         result_list.insert(0, run_time)
         all_result.append(result_list)
         time.sleep(interval_crawler) if i != max_num - 1 else None
 
-    with open("zhihu.json", "w") as f:
-        json.dump(all_result, f)
+    with open("zhihu.json", "w", encoding = "utf-8") as f:
+        json.dump(all_result, f, indent = 4, ensure_ascii = False)
         f.close()
     print("Save successfully")
 
