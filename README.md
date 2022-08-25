@@ -15,15 +15,23 @@
 
 ### 使用方法
 
-在 `headers.json`内写入您的 `"User-Agent"、"Cookie"`(通过在[知乎热榜](https://www.zhihu.com/hot)界面下按 `F12 `获取)。然后在 `zhihu_crawler.py `内修改每次爬取间隔的时间 `interval_crawler `（单位：秒）和最大爬取次数 `max_num `，~~此处摆烂没有用argparse或者input~~。最后 `python zhihu_crawler.py`即可运行。
+在 `headers.json`内写入您的 `"User-Agent"、"Cookie"`(通过在[知乎热榜](https://www.zhihu.com/hot)界面下按 `F12 `获取)。然后在 `zhihu_crawler.py `内修改每次爬取间隔的时间 `interval_crawler `（单位：秒）和最大爬取次数 `max_num `，~~此处摆烂没有用argparse或者input~~。最后在 `zhihu_hot `目录下 `python zhihu_crawler.py`即可运行。
 
 ### 问题
 
 + 对异常情况的处理较少，程序鲁棒性不够（基本上是爬取过程中遇到一个异常修复一个异常，比如没有详细描述的热榜问题，没有评论的广告等）；
-+ 没有使用logging模块输出日志，可参考[Python Logging 模块完全解读 ](https://www.sohu.com/a/313356453_571478)。
++ 没有使用logging模块输出日志，可参考[Python Logging 模块完全解读 ](https://www.sohu.com/a/313356453_571478)，在下面的GPA计算器中使用了。
 
 ## GPA计算器
 
-## Reference
+### 介绍
+
+该程序位于 `GPA_caculator` 文件夹下，可以模拟用户通过 `webvpn `登录 `info` ，然后获取info上该用户所有成绩信息并打印和保存。（根据爬取的信息可以很方便计算出各种成绩信息，比如每学期的GPA，得到3.6的学分总数等，~~因为太懒就没有写~~）
+
+### 使用方法
+
+在 `user.json` 下写入您的用户名和密码（注意保管好个人隐私），然后在 `GPA_caculator `目录下 `python GPA_caculator.py `即可运行。
+
+##  Reference
 
 [lamda&#39;s example](https://github.com/Btlmd/sast2022-crawler-SQL-training)
