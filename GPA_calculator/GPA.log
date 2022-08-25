@@ -1,0 +1,68 @@
+2022-08-25 16:10:22.182 [INFO] ***************************************************************
+2022-08-25 16:10:22.182 [INFO] GPA_caculator started
+2022-08-25 16:10:22.183 [INFO] user_info loaded
+2022-08-25 16:10:22.183 [INFO] ====== WebDriver manager ======
+2022-08-25 16:10:22.786 [INFO] Get LATEST chromedriver version for google-chrome 104.0.5112
+2022-08-25 16:10:23.654 [INFO] Driver [C:\Users\33493\.wdm\drivers\chromedriver\win32\104.0.5112\chromedriver.exe] found in cache
+2022-08-25 16:10:26.802 [INFO] Webvpn logined successfully
+2022-08-25 16:10:31.404 [INFO] go to info successfully
+2022-08-25 16:10:33.560 [INFO] info logined successfully
+2022-08-25 16:10:36.846 [INFO] go to grades successfully
+2022-08-25 16:10:36.875 [INFO] read table successfully
+2022-08-25 16:10:37.079 [INFO] read head successfully
+2022-08-25 16:10:37.209 [INFO] read sum successfully
+2022-08-25 16:10:45.769 [INFO] read 50 courses successfully
+2022-08-25 16:10:48.212 [INFO] browser closed
+2022-08-25 16:10:48.270 [INFO] table printed and saved successfully
+2022-08-25 16:10:48.271 [INFO] ***************************************************************
+2022-08-25 16:14:18.083 [INFO] ***************************************************************
+2022-08-25 16:14:18.084 [INFO] GPA_caculator started
+2022-08-25 16:14:18.085 [INFO] user_info loaded
+2022-08-25 16:14:18.085 [INFO] ====== WebDriver manager ======
+2022-08-25 16:14:18.624 [INFO] Get LATEST chromedriver version for google-chrome 104.0.5112
+2022-08-25 16:14:19.432 [INFO] Driver [C:\Users\33493\.wdm\drivers\chromedriver\win32\104.0.5112\chromedriver.exe] found in cache
+2022-08-25 16:14:22.369 [INFO] Webvpn logined successfully
+2022-08-25 16:14:26.998 [INFO] go to info successfully
+2022-08-25 16:14:29.106 [INFO] info logined successfully
+2022-08-25 16:14:33.154 [INFO] go to grades successfully
+2022-08-25 16:14:33.191 [INFO] read table successfully
+2022-08-25 16:14:33.411 [INFO] read head successfully
+2022-08-25 16:14:33.498 [INFO] read sum successfully
+2022-08-25 16:14:42.494 [INFO] read 50 courses successfully
+2022-08-25 16:14:44.990 [INFO] browser closed
+2022-08-25 16:14:45.053 [INFO] table printed and saved successfully
+2022-08-25 16:14:45.053 [INFO] ***************************************************************
+2022-08-25 16:15:46.457 [INFO] ***************************************************************
+2022-08-25 16:15:46.459 [INFO] GPA_caculator started
+2022-08-25 16:15:46.459 [INFO] user_info loaded
+2022-08-25 16:15:46.459 [INFO] ====== WebDriver manager ======
+2022-08-25 16:15:47.056 [INFO] Get LATEST chromedriver version for google-chrome 104.0.5112
+2022-08-25 16:15:48.583 [INFO] Driver [C:\Users\33493\.wdm\drivers\chromedriver\win32\104.0.5112\chromedriver.exe] found in cache
+2022-08-25 16:15:51.706 [INFO] Webvpn logined successfully
+2022-08-25 16:15:57.811 [INFO] go to info successfully
+2022-08-25 16:16:00.073 [INFO] info logined successfully
+2022-08-25 16:16:04.179 [INFO] go to grades successfully
+2022-08-25 16:16:04.214 [INFO] read table successfully
+2022-08-25 16:16:04.470 [INFO] read head successfully
+2022-08-25 16:16:04.550 [INFO] read sum successfully
+2022-08-25 16:16:13.354 [INFO] read 50 courses successfully
+2022-08-25 16:16:15.722 [INFO] browser closed
+2022-08-25 16:16:15.777 [INFO] table printed and saved successfully
+2022-08-25 16:16:15.778 [INFO] ***************************************************************
+2022-08-25 16:16:58.293 [INFO] ***************************************************************
+2022-08-25 16:16:58.294 [INFO] GPA_caculator started
+2022-08-25 16:16:58.294 [INFO] user_info loaded
+2022-08-25 16:16:58.294 [INFO] ====== WebDriver manager ======
+2022-08-25 16:16:58.922 [INFO] Get LATEST chromedriver version for google-chrome 104.0.5112
+2022-08-25 16:16:59.796 [INFO] Driver [C:\Users\33493\.wdm\drivers\chromedriver\win32\104.0.5112\chromedriver.exe] found in cache
+2022-08-25 16:17:02.875 [INFO] Webvpn logined successfully
+2022-08-25 16:17:08.739 [INFO] go to info successfully
+2022-08-25 16:17:12.576 [INFO] info logined successfully
+2022-08-25 16:17:17.091 [INFO] go to grades successfully
+2022-08-25 16:17:17.137 [INFO] read table successfully
+2022-08-25 16:17:17.441 [INFO] read head successfully
+2022-08-25 16:17:17.534 [INFO] read sum successfully
+2022-08-25 16:17:27.888 [INFO] read 50 courses successfully
+2022-08-25 16:17:30.448 [INFO] browser closed
+2022-08-25 16:17:30.484 [INFO] table printed and saved successfully
+2022-08-25 16:17:30.485 [INFO] ***************************************************************
