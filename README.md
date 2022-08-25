@@ -15,7 +15,7 @@
 
 ### 使用方法
 
-需要手动创建 `headers.json` 文件夹，并在其中以字典形式保存用户的 `"User-Agent"、"Cookie"`(通过在[知乎热榜](https://www.zhihu.com/hot)界面下按 `F12`获取，因为隐私问题未上传至Github)。然后在 `zhihu_crawler.py`内修改每次爬取间隔的时间 `interval_crawler`（单位：秒）和最大爬取次数 `max_num`，~~此处摆烂没有用argparse或者input~~。最后 `python zhihu_crawler.py`即可运行。
+在 `headers.json`内写入您的 `"User-Agent"、"Cookie"`(通过在[知乎热榜](https://www.zhihu.com/hot)界面下按 `F12 `获取)。然后在 `zhihu_crawler.py `内修改每次爬取间隔的时间 `interval_crawler `（单位：秒）和最大爬取次数 `max_num `，~~此处摆烂没有用argparse或者input~~。最后 `python zhihu_crawler.py`即可运行。
 
 ### 问题
 
